@@ -4,7 +4,7 @@ import Vue from 'vue'
 import { ConfirmPlugin, ToastPlugin } from 'vux'
 Vue.use(ConfirmPlugin)
 Vue.use(ToastPlugin)
-const wx = {
+const test = {
   navigateTo ({ url }) {
     console.log(url)
     router.push({ path: url })
@@ -36,5 +36,5 @@ const wx = {
     })
   }
 }
-window.wx = wx
-export default wx
+window.test = test
+export default test

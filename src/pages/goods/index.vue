@@ -159,7 +159,8 @@
 <script>
 /* eslint-disable */
 import api from '@/utils/api'
-import wx from '@/utils/wx'
+// import wx from '@/utils/wx'
+// import test from '@/utils/test'
 // import wxParse from 'mpvue-wxparse'
 
 export default {

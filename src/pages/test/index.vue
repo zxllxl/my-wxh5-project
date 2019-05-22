@@ -1,11 +1,21 @@
 <template lang="jade">
-  wxhtml:view#container
+  wxhtml:view#container(@click='bindViewTap')
     p 123
 </template>
 
 <script>
 export default {
-  name: 'test'
+  name: 'test',
+  methods: {
+    bindViewTap () {
+      const url = '../logs/main'
+      // wx.navigateTo({url})
+      console.log(url)
+      console.log(this.$store.state.banner)
+      console.log(this.router)
+      wx.showToast({title: '操作成功！'})
+    }
+  }
 }
 </script>
 

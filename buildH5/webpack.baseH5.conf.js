@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../configH5')
 const vueLoaderConfig = require('./vue-loader.conf')
+const vuxLoader = require('vux-loader')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -17,7 +18,8 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
-module.exports = {
+// module.exports = {
+const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/mainH5.js'
@@ -59,9 +61,8 @@ module.exports = {
         ],
       },
       {
-            test: /\.less$/,
-
-            loader: "style-loader!css-loader!less-loader",
+        test: /\.less$/,
+        loader: "style-loader!css-loader!less-loader",
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -102,3 +103,7 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui']
+})
