@@ -1,6 +1,7 @@
 <template>
   <div @click="clickHandle">
-
+    
+    <view>123</view>
     <div class="userinfo" @click="bindViewTap">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
       <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />

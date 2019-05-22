@@ -30,6 +30,9 @@ Vue.mixin({
     }
   },
   created () {
+    let w = document.documentElement.offsetWidth / 23.4375
+    document.documentElement.style.fontSize = w + 'px'
+    console.log(w)
     console.log('chrome')
     // this.service = httpService
   }
@@ -37,6 +40,7 @@ Vue.mixin({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  // el: 'body',
   router,
   components: { App },
   template: '<App/>'
