@@ -16,6 +16,15 @@ body {
   padding: 0;
 }
 p {
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+wxhtml\:view {
   display: block;
+  box-sizing: border-box;
+  word-break: break-all;
+  /* overflow:auto; */
 }
 </style>

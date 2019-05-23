@@ -38,10 +38,10 @@ const api = {
     baseURL: ApiRootUrl
   }),
   // 获得商品的详情
-  // getGoodsDetail: (paramObj) => request.get('goods/detail', paramObj, {
-    // baseURL: ApiRootUrl
-  // }),
-  getGoodsDetail: () => ({}),
+  getGoodsDetail: (paramObj) => request.get('goods/detail', paramObj, {
+    baseURL: ApiRootUrl
+  }),
+  // getGoodsDetail: () => ({}),
   // 新品
   getGoodsNew: (r) => request.get('goods/new', null, {
     baseURL: ApiRootUrl
@@ -83,10 +83,10 @@ const api = {
     baseURL: ApiRootUrl
   }),
   // 获取购物车商品件数
-  // getCartGoodsCount: (r) => request.get('cart/goodscount', null, {
-    // baseURL: ApiRootUrl
-  // }),
-  getCartGoodsCount: () => ({}),
+  getCartGoodsCount: (r) => request.get('cart/goodscount', null, {
+    baseURL: ApiRootUrl
+  }),
+  // getCartGoodsCount: () => ({}),
   // 下单前信息确认
   CartCheckout: (paramObj) => request.get('cart/checkout', paramObj, {
     baseURL: ApiRootUrl
