@@ -23,7 +23,7 @@ app.use(require('webpack-hot-middleware')(compiler))
 
 app.use('/static', express.static('static'))
 
-app.listen(8881, '127.0.0.1', function (err) {
+app.listen(8881, '0.0.0.0', function (err) {
   if (err) {
     console.log(err)
     return

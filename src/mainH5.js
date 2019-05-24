@@ -5,7 +5,6 @@ import Vue from 'vue'
 import App from './AppH5'
 import router from './router'
 // import wxService from './api/wxService'
-// import httpService from './api/httpService'
 import store from './store'
 import wx from 'wx'
 
@@ -14,9 +13,8 @@ Vue.config.productionTip = false
 Vue.mixin({
   data () {
     return {
-      service: '', // 服务
       router: '/', // 路由路径
-      imgSrc: '' // 图片路径
+      imgSrc: 'http://static2.51eim.com/Public/LifeQuan/Shop/v2' // 图片路径
     }
   },
   methods: {
@@ -35,7 +33,6 @@ Vue.mixin({
     document.documentElement.style.fontSize = w + 'px'
     console.log(w)
     console.log('chrome')
-    // this.service = httpService
   }
 })
 /* eslint-disable no-new */

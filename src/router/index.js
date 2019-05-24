@@ -9,7 +9,7 @@ import test from '../pages/test/index.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history', // 去掉url中的#
+  // mode: 'history', // 去掉url中的#
   routes: [{
     path: '/',
     name: 'index',

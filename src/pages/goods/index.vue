@@ -25,7 +25,7 @@
     </wxhtml:view>
     <wxhtml:view class="section-nav section-attr" @click="switchAttrPop">
         <wxhtml:view class="t">请选择规格数量</wxhtml:view>
-        <img class="i" src="/static/images/address_right.png" background-size="cover"/>
+        <img class="i" :src="imgSrc + '/static/images/address_right.png'" background-size="cover"/>
     </wxhtml:view>
     <wxhtml:view class="section-nav section-act">
         <wxhtml:view class="t">
@@ -33,7 +33,7 @@
             <wxhtml:view class="tag">万圣趴</wxhtml:view>
             <wxhtml:view class="text">全场满499，额外送糖果</wxhtml:view>
         </wxhtml:view>
-        <img class="i" src="/static/images/address_right.png" background-size="cover"/>
+        <img class="i" :src="imgSrc + '/static/images/address_right.png'" background-size="cover"/>
     </wxhtml:view>
     <wxhtml:view class="comments" v-if="comment.count > 0">
         <wxhtml:view class="h">
@@ -110,7 +110,7 @@
     <wxhtml:view class="attr-pop-box" :hidden="!openAttr" v-show="openAttr">
     <wxhtml:view class="attr-pop">
         <wxhtml:view class="close" @click="closeAttr">
-        <img class="icon" src="/static/images/icon_close.png"/>
+        <img class="icon" :src="imgSrc + '/static/images/icon_close.png'"/>
         </wxhtml:view>
         <wxhtml:view class="img-info">
         <img class="img" :src="gallery[0].img_url"/>
@@ -146,7 +146,7 @@
     <wxhtml:view class="l l-cart">
         <wxhtml:view class="box">
         <wxhtml:text class="cart-count">{{cartGoodsCount}}</wxhtml:text>
-        <img @click="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"/>
+        <img @click="openCartPage" class="icon" :src="imgSrc + '/static/images/ic_menu_shoping_nor.png'"/>
         </wxhtml:view>
     </wxhtml:view>
     <wxhtml:view class="c">立即购买</wxhtml:view>
@@ -187,9 +187,9 @@ export default {
       number: 1,
       checkedSpecText: '请选择规格数量',
       openAttr: false,
-      noCollectImage: '/static/images/icon_collect.png',
-      hasCollectImage: '/static/images/icon_collect_checked.png',
-      collectBackImage: '/static/images/icon_collect.png',
+      noCollectImage: this.$parent.imgSrc + '/static/images/icon_collect.png',
+      hasCollectImage: this.$parent.imgSrc + '/static/images/icon_collect_checked.png',
+      collectBackImage: this.$parent.imgSrc + '/static/images/icon_collect.png',
       goodDetailHTMLstr: ''
     }
   },
@@ -213,7 +213,7 @@ export default {
       console.log('商品详情,请求结果', res);
       if (res.errno === 0) {
         this.goods = res.data.info;
-        this.gallery = res.data.gallery.length > 0 ? res.data.gallery : [{ img_url: '/static/images/icon_error.png' }];
+        this.gallery = res.data.gallery.length > 0 ? res.data.gallery : [{ img_url: this.imgSrc + '/static/images/icon_error.png' }];
         this.attribute = res.data.attribute;
         this.issueList = res.data.issue;
         this.comment = res.data.comment;
@@ -364,7 +364,7 @@ export default {
         }
       } else {
         wx.showToast({
-          image: '/static/images/icon_error.png',
+          image: this.imgSrc + '/static/images/icon_error.png',
           title: res.errmsg,
           mask: true
         });
@@ -385,7 +385,7 @@ export default {
         // 提示选择完整规格
         if (!this.isCheckedAllSpec()) {
           wx.showToast({
-            image: '/static/images/icon_error.png',
+            image: this.imgSrc + '/static/images/icon_error.png',
             title: '规格选择不完整',
             mask: true
           });
@@ -398,7 +398,7 @@ export default {
         if (!checkedProduct || checkedProduct.length <= 0) {
           // 提示没有库存
           wx.showToast({
-            image: '/static/images/icon_error.png',
+            image: this.imgSrc + '/static/images/icon_error.png',
             title: '库存型号不足',
             mask: true
           });
@@ -407,7 +407,7 @@ export default {
         // 验证商品数量
         if (checkedProduct[0].goods_number < this.number) { // 返回数组length为1，用[0]
           wx.showToast({
-            image: '/static/images/icon_error.png',
+            image: this.imgSrc + '/static/images/icon_error.png',
             title: '库存数量不足',
             mask: true
           });
@@ -424,7 +424,7 @@ export default {
           this.cartGoodsCount = res.data.cartTotal.goodsCount;
         } else {
           wx.showToast({
-            image: '/static/images/icon_error.png',
+            image: this.imgSrc + '/static/images/icon_error.png',
             title: res.errmsg,
             mask: true
           });
@@ -1103,5 +1103,4 @@ export default {
   text-align: center;
   line-height: 65/@rpx;
 }
-
 </style>

@@ -1,7 +1,8 @@
 /* eslint-disable */
 import request from './request'
 
-const ApiRootUrl = 'http://127.0.0.1:8360/api/'
+// const ApiRootUrl = 'http://127.0.0.1:8360/api/'
+const ApiRootUrl = 'http://51eim.kuaiguo.net/lifequan.php?m=Shop&shop_id=682&api=/'
 
 const api = {
   // 首页数据接口
@@ -38,7 +39,10 @@ const api = {
     baseURL: ApiRootUrl
   }),
   // 获得商品的详情
-  getGoodsDetail: (paramObj) => request.get('goods/detail', paramObj, {
+  // getGoodsDetail: (paramObj) => request.get('goods/detail', paramObj, {
+    // baseURL: ApiRootUrl
+  // }),
+  getGoodsDetail: (paramObj) => request.get('&a=test2', paramObj, {
     baseURL: ApiRootUrl
   }),
   // getGoodsDetail: () => ({}),
