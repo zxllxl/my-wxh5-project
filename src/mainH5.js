@@ -14,7 +14,7 @@ Vue.mixin({
   data () {
     return {
       router: '/', // 路由路径
-      imgSrc: 'http://static2.51eim.com/Public/LifeQuan/Shop/v2' // 图片路径
+      imgSrc: 'http://static2.51eim.kuaiguo.net/Public/LifeQuan/Shop/v2' // 图片路径
     }
   },
   methods: {
