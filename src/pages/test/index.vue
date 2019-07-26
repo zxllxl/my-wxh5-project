@@ -8,8 +8,10 @@ export default {
   name: 'test',
   methods: {
     bindViewTap () {
-      const url = '../logs/main'
+      // const url = '../logs/main'
+      const url = 'goods?id=1181000'
       // wx.navigateTo({url})
+      wx.navigateTo({url})
       console.log(url)
       console.log(this.$store.state.banner)
       console.log(this.router)
